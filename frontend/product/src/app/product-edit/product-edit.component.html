@@ -1,0 +1,85 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title>Editar producto</mat-card-title>
+    <mat-card-content>
+
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Información del producto</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row my-3">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Nombre" formControlName="name" required>
+                  <mat-hint align="end">Máximo 50 caracteres.</mat-hint>
+
+                  <mat-error *ngFor="let validation of validation_messages.name">
+                    <mat-error class="error-message" *ngIf="productForm.get('name')?.hasError(validation.type) &&
+                (productForm.get('name')?.dirty || productForm.get('name')?.touched)">{{validation.message}}
+                    </mat-error>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row my-3">
+              <div class="col">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Marca" formControlName="brand" required>
+                  <mat-hint align="end">Máximo 50 caracteres.</mat-hint>
+                  <mat-error *ngFor="let validation of validation_messages.brand">
+                    <mat-error class="error-message" *ngIf="productForm.get('brand')?.hasError(validation.type) &&
+                (productForm.get('brand')?.dirty || productForm.get('brand')?.touched)">{{validation.message}}</mat-error>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row my-3">
+              <div class="col">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Tamaño" formControlName="size" required>
+                  <mat-error *ngFor="let validation of validation_messages.size">
+                    <mat-error class="error-message" *ngIf="productForm.get('size')?.hasError(validation.type) &&
+                (productForm.get('size')?.dirty || productForm.get('size')?.touched)">{{validation.message}}</mat-error>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row my-3">
+              <div class="col">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Precio" formControlName="price" required>
+                  <mat-error *ngFor="let validation of validation_messages.price">
+                    <mat-error class="error-message" *ngIf="productForm.get('price')?.hasError(validation.type) &&
+                (productForm.get('price')?.dirty || productForm.get('price')?.touched)">{{validation.message}}</mat-error>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row my-2">
+              <div class="col">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Imagenes" formControlName="images" required>
+                  <mat-error *ngFor="let validation of validation_messages.images">
+                    <mat-error class="error-message" *ngIf="productForm.get('images')?.hasError(validation.type) &&
+                (productForm.get('images')?.dirty || productForm.get('images')?.touched)">{{validation.message}}</mat-error>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+          </mat-card-content>
+          <mat-card-actions>
+            <button (click)="onSubmit()" mat-raised-button color="primary">Actualizar</button>
+            <button mat-raised-button color="primary" [routerLink]="['/product', sku]">Volver</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

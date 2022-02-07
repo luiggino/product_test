@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="100">
+    <h4>Lista de productos</h4>
+
+    <div fxLayout="row wrap" class="products-wrapper">
+
+      <div *ngFor="let product of products" fxFlex="100" [fxFlex.gt-sm]="18" fxFlex.sm="50" class="col">
+
+        <mat-card class="product-item text-center">
+          <a [routerLink]="['/product', product.sku]" class="image-link">
+            <img [src]="product.images[0]" alt="">
+          </a>
+          <a [routerLink]="['/product', product.sku]" class="title text-truncate">
+            {{product.name}}
+          </a>
+
+          <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
+            <div fxLayout="column" fxLayoutAlign="center start">
+              <p class="new-price">${{product.price | number : '1.2-2'}}</p>
+            </div>
+          </div>
+          <div class="divider mt-2"></div>
+          <div class="icons">
+          </div>
+        </mat-card>
+      </div>
+
+
+    </div>
+  </div>
+</div>

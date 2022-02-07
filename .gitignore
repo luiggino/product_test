@@ -1,0 +1,77 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+backend/product/HELP.md
+backend/product/target/
+backend/product/!.mvn/wrapper/maven-wrapper.jar
+backend/product/!**/src/main/**/target/
+backend/product/!**/src/test/**/target/
+
+### STS ###
+backend/product/.apt_generated
+backend/product/.classpath
+backend/product/.factorypath
+backend/product/.project
+backend/product/.settings
+backend/product/.springBeans
+backend/product/.sts4-cache
+
+### IntelliJ IDEA ###
+backend/product/.idea
+backend/product/*.iws
+backend/product/*.iml
+backend/product/*.ipr
+
+### NetBeans ###
+backend/product/nbproject/private/
+backend/product/nbbuild/
+backend/product/dist/
+backend/product/nbdist/
+backend/product/.nb-gradle/
+backend/product/build/
+backend/product/!**/src/main/**/build/
+backend/product/!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+
+# Compiled output
+frontend/product/dist
+frontend/product/tmp
+frontend/product/out-tsc
+frontend/product/bazel-out
+
+# Node
+frontend/product/node_modules
+frontend/product/npm-debug.log
+frontend/product/yarn-error.log
+
+# IDEs and editors
+frontend/product/.idea/
+frontend/product/.project
+frontend/product/.classpath
+frontend/product/.c9/
+frontend/product/*.launch
+frontend/product/.settings/
+frontend/product/*.sublime-workspace
+
+# Visual Studio Code
+frontend/product/.vscode/*
+frontend/product/!.vscode/settings.json
+frontend/product/!.vscode/tasks.json
+frontend/product/!.vscode/launch.json
+frontend/product/!.vscode/extensions.json
+frontend/product/.history/*
+
+# Miscellaneous
+frontend/product/.angular/cache
+frontend/product/.sass-cache/
+frontend/product/connect.lock
+frontend/product/coverage
+frontend/product/libpeerconnection.log
+frontend/product/testem.log
+frontend/product/typings
+
+# System files
+frontend/product/.DS_Store
+frontend/product/Thumbs.db

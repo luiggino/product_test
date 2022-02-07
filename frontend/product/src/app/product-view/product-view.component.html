@@ -1,0 +1,24 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100" fxFlex.gt-md="35" fxFlex.md="45">
+
+    <mat-card class="product-image">
+      <a [routerLink]="['/product', sku]" class="image-link">
+        <img [src]="product.images[0]" alt="">
+      </a>
+    </mat-card>
+  </div>
+  <div fxFlex="100" fxFlex.gt-md="45" fxFlex.md="55" ngClass.gt-sm="px-3 m-0" ngClass.sm="mt-2" ngClass.xs="mt-2">
+    <div class="py-1 lh">
+      <p><span class="text-muted fw-500">Nombre: </span><span>{{ product.name }}</span></p>
+      <p><span class="text-muted fw-500">Marca: </span><span>{{ product.brand }}</span></p>
+    </div>
+    <p><span class="text-muted fw-500">Tamaño: </span><span>{{product.size}}</span></p>
+
+    <div class="divider mt-1"></div>
+    <div class="py-2">
+      <h2 class="new-price">$ {{product.price| number : '1.2-2'}}</h2>
+    </div>
+    <button mat-raised-button color="primary" [routerLink]="['/product-edit', product.sku]">Editar</button>
+    <button mat-raised-button color="primary" [routerLink]="['/']" class="mx-2">Volver</button>
+  </div>
+</div>
